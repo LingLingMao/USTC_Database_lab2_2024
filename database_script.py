@@ -39,7 +39,7 @@ def insert_student():
     if pub_in[6] == '':
         blob = 'NULL'
     else:
-        blob = convertToBinaryData("D:/Desktop/sjk_lab2/photos/"+pub_in[6])
+        blob = convertToBinaryData("./photos/"+pub_in[6])
     add_student = ("INSERT INTO Student values (%s, %s, %s, %s, %s, %s, %s)")
     cursor.execute(add_student, (pub_in[0], pub_in[1], pub_in[2], pub_in[3], pub_in[4], pub_in[5], blob))
     cnx.commit() # 提交事务
@@ -241,7 +241,7 @@ def insert_dk():
     if pub_in[5] == '':
         blob = 'NULL'
     else:
-        blob = convertToBinaryData("D:/Desktop/sjk_lab2/photos/"+pub_in[5])
+        blob = convertToBinaryData("./photos/"+pub_in[5])
     add_dk = ("INSERT INTO DormKeeper values (%s, %s, %s, %s, %s, %s)")
     cursor.execute(add_dk, (pub_in[0], pub_in[1], pub_in[2], pub_in[3], pub_in[4], blob))
     cnx.commit() # 提交事务
